@@ -128,15 +128,6 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
     <div className="py-8 md:py-16 bg-white animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Breadcrumb Bar */}
-        <div className="flex items-center gap-2 text-xs text-muted font-bold flex-wrap border-b border-gray-100 pb-4">
-          <Link href="/" className="hover:text-primary transition">Home</Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <Link href="/products" className="hover:text-primary transition">Products</Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-heading font-black font-serif uppercase tracking-tight">{product.name}</span>
-        </div>
-
         {/* Main Product Showcase Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           

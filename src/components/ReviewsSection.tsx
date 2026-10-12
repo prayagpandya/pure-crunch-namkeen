@@ -101,7 +101,13 @@ export function ReviewsSection() {
   useEffect(() => {
     const updateCards = () => {
       if (typeof window !== "undefined") {
-        setCardsPerView(window.innerWidth < 768 ? 1 : 3);
+        if (window.innerWidth < 640) {
+          setCardsPerView(1);
+        } else if (window.innerWidth < 1024) {
+          setCardsPerView(2);
+        } else {
+          setCardsPerView(3);
+        }
       }
     };
     updateCards();

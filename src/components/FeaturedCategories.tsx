@@ -146,7 +146,7 @@ export function FeaturedCategories({ initialCategories }: FeaturedCategoriesProp
             <Link 
               key={cat.id} 
               href={cat.link}
-              className="group flex flex-col items-center text-center space-y-3.5"
+              className="group flex flex-col items-center text-center space-y-3.5 col-span-1 last:col-span-2 md:last:col-span-1"
             >
               {/* Product Image Card Container (No circle, clean elegant card) */}
               <div className="w-full aspect-square max-w-[200px] rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-primary/40 transition-all duration-300 p-2.5 sm:p-3 flex items-center justify-center relative overflow-hidden group-hover:-translate-y-2">

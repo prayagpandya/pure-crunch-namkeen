@@ -155,9 +155,6 @@ export default async function HomePage() {
             
             {/* Left Content */}
             <div className="space-y-6">
-              <span className="px-4 py-1.5 bg-gradient-to-r from-[#009fe3]/20 to-[#f58220]/20 text-cyan-300 border border-cyan-400/30 text-[11px] font-black uppercase tracking-wider rounded-full inline-block">
-                🌱 Since 1989 • Rajkot, Gujarat
-              </span>
               <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif uppercase leading-tight drop-shadow-sm">
                 The Pure Groundnut Oil Difference
               </h2>

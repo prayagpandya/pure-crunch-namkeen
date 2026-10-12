@@ -65,7 +65,7 @@ export function BottomInfiniteTicker() {
             <button
               onClick={() => setIsVisible(false)}
               title="Close Ticker"
-              className="p-1 hover:bg-black/5 rounded-full transition text-heading hover:text-black cursor-pointer"
+              className="p-1 hover:bg-white/10 rounded-full transition text-slate-300 hover:text-white cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>

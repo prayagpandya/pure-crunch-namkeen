@@ -61,58 +61,64 @@ export default function CartPage() {
               return (
                 <div 
                   key={`${item.product.id}-${item.selectedWeight}`}
-                  className="flex items-center gap-3 sm:gap-4 p-4 bg-white rounded-2xl border border-gray-150 hover:shadow-xs transition"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-4 bg-white rounded-2xl border border-gray-150 hover:shadow-xs transition"
                 >
-                  {/* Image */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 relative bg-warm-bg rounded-xl p-2 border border-gray-100 flex-shrink-0">
-                    <Image 
-                      src={item.product.image} 
-                      alt={item.product.name}
-                      fill
-                      unoptimized={Boolean(item.product.image?.startsWith("data:"))}
-                      sizes="(max-width: 640px) 64px, 80px"
-                      className="object-contain p-1"
-                    />
-                  </div>
+                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                    {/* Image */}
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 relative bg-warm-bg rounded-xl p-2 border border-gray-100 flex-shrink-0">
+                      <Image 
+                        src={item.product.image} 
+                        alt={item.product.name}
+                        fill
+                        unoptimized={Boolean(item.product.image?.startsWith("data:"))}
+                        sizes="(max-width: 640px) 64px, 80px"
+                        className="object-contain p-1"
+                      />
+                    </div>
 
-                  {/* Details */}
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-xs sm:text-sm font-bold text-heading truncate">{item.product.name}</h4>
-                    <p className="text-[11px] text-muted font-semibold mt-0.5">{item.selectedWeight}</p>
-                    <div className="text-xs sm:text-sm font-bold text-primary mt-1">
-                      ₹{itemPrice.toFixed(2)} each
+                    {/* Details */}
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs sm:text-sm font-bold text-heading truncate">{item.product.name}</h4>
+                      <p className="text-[11px] text-muted font-semibold mt-0.5">{item.selectedWeight}</p>
+                      <div className="text-xs sm:text-sm font-bold text-primary mt-1">
+                        ₹{itemPrice.toFixed(2)} each
+                      </div>
                     </div>
                   </div>
 
-                  {/* Quantity adjustments */}
-                  <div className="flex items-center gap-1 bg-warm-bg border border-gray-200 rounded-lg p-1">
-                    <button 
-                      onClick={() => updateQuantity(item.product.id, item.selectedWeight, item.quantity - 1)}
-                      className="p-1.5 hover:bg-white rounded text-heading active:scale-95 cursor-pointer"
-                    >
-                      <Minus className="w-3.5 h-3.5" />
-                    </button>
-                    <span className="text-xs font-bold px-2.5 text-heading">{item.quantity}</span>
-                    <button 
-                      onClick={() => updateQuantity(item.product.id, item.selectedWeight, item.quantity + 1)}
-                      className="p-1.5 hover:bg-white rounded text-heading active:scale-95 cursor-pointer"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-
-                  {/* Subtotal & Delete */}
-                  <div className="flex flex-col items-end gap-1.5 pl-2">
-                    <div className="text-xs sm:text-sm font-black text-heading">
-                      ₹{(itemPrice * item.quantity).toFixed(2)}
+                  <div className="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-100">
+                    {/* Quantity adjustments */}
+                    <div className="flex items-center gap-1 bg-warm-bg border border-gray-200 rounded-lg p-1">
+                      <button 
+                        onClick={() => updateQuantity(item.product.id, item.selectedWeight, item.quantity - 1)}
+                        className="p-1.5 hover:bg-white rounded text-heading active:scale-95 cursor-pointer"
+                        aria-label="Decrease quantity"
+                      >
+                        <Minus className="w-3.5 h-3.5" />
+                      </button>
+                      <span className="text-xs font-bold px-2.5 text-heading">{item.quantity}</span>
+                      <button 
+                        onClick={() => updateQuantity(item.product.id, item.selectedWeight, item.quantity + 1)}
+                        className="p-1.5 hover:bg-white rounded text-heading active:scale-95 cursor-pointer"
+                        aria-label="Increase quantity"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                      </button>
                     </div>
-                    <button 
-                      onClick={() => removeFromCart(item.product.id, item.selectedWeight)}
-                      className="text-muted hover:text-red-600 transition p-1 cursor-pointer"
-                      title="Remove item"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+
+                    {/* Subtotal & Delete */}
+                    <div className="flex items-center sm:flex-col sm:items-end gap-2 sm:gap-1.5 pl-2">
+                      <div className="text-xs sm:text-sm font-black text-heading">
+                        ₹{(itemPrice * item.quantity).toFixed(2)}
+                      </div>
+                      <button 
+                        onClick={() => removeFromCart(item.product.id, item.selectedWeight)}
+                        className="text-muted hover:text-red-600 transition p-1 cursor-pointer"
+                        title="Remove item"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               );

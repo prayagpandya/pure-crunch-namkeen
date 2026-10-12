@@ -22,7 +22,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0b132b] text-white pt-16 pb-8 z-10 relative">
+    <footer className="bg-[#0b132b] text-white pt-16 pb-16 sm:pb-12 z-10 relative">
       {/* 3-Color Brand Gradient Ribbon */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#009fe3] via-[#f58220] to-[#65a30d]" />
 
@@ -77,7 +77,14 @@ export function Footer() {
               <li>
                 <Link href="/contact" className="hover:text-primary transition">Contact Us</Link>
               </li>
-              <li className="pt-1">
+              <li>
+                <Link href="/sitemap" className="hover:text-primary transition">Website Sitemap</Link>
+              </li>
+              <li className="pt-1 flex items-center gap-3">
+                <Link href="/sitemap.xml" className="text-gray-500 hover:text-cyan-400 text-[11px] transition font-mono">
+                  XML Sitemap
+                </Link>
+                <span className="text-gray-600">•</span>
                 <Link href="/admin" className="text-gray-500 hover:text-secondary text-[11px] transition inline-flex items-center gap-1 font-medium">
                   <span>🔒 Admin Portal</span>
                 </Link>

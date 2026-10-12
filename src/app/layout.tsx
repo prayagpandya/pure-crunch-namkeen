@@ -24,9 +24,32 @@ const kalam = Kalam({
 });
 
 export const metadata: Metadata = {
-  title: "Pure Crunch | Healthy Namkeen & Crispy Wafers Online",
+  metadataBase: new URL("https://www.purecrunch.co.in"),
+  title: {
+    default: "Pure Crunch | 100% Pure Groundnut Oil Healthy Namkeen & Wafers",
+    template: "%s | Pure Crunch Healthy Namkeen",
+  },
   description: "Shop premium Indian snacks cooked in 100% pure groundnut oil and seasoned with mineral-rich rock salt (Sindhalu). Healthy family snacking from Rajkot, Gujarat.",
-  keywords: ["healthy namkeen", "potato wafers", "groundnut oil snacks", "rock salt wafers", "farali chevdo", "khakhra online", "achyut industries"],
+  keywords: ["healthy namkeen", "potato wafers", "groundnut oil snacks", "rock salt wafers", "farali chevdo", "khakhra online", "achyut industries", "pure crunch rajkot"],
+  alternates: {
+    canonical: "https://www.purecrunch.co.in",
+  },
+  openGraph: {
+    title: "Pure Crunch | Healthy Namkeen & Crispy Wafers",
+    description: "Shop premium Indian snacks cooked in 100% pure groundnut oil with rock salt (Sindhalu). Zero palm oil.",
+    url: "https://www.purecrunch.co.in",
+    siteName: "Pure Crunch",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/main_logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Pure Crunch Healthy Namkeen",
+      },
+    ],
+  },
   icons: {
     icon: [
       { url: "/images/favicon.ico" },
