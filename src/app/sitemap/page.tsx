@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { PRODUCTS, CATEGORIES, Product } from "@/data/products";
 import clientPromise from "@/lib/mongodb";
 import { 
-  FileText, 
   Layers, 
   ShoppingBag, 
   Globe, 
@@ -76,16 +75,13 @@ export default async function SitemapPage() {
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-3">
-            <a
-              href="/sitemap.xml"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/products"
               className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#009fe3] to-[#0284c7] text-white rounded-full text-xs font-black uppercase tracking-wider hover:shadow-lg transition active:scale-95 shadow-cyan-500/20"
             >
-              <FileText className="w-4 h-4" />
-              <span>View Raw XML Sitemap (/sitemap.xml)</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+              <ShoppingBag className="w-4 h-4" />
+              <span>Explore All Products</span>
+            </Link>
             <a
               href="/robots.txt"
               target="_blank"
@@ -226,7 +222,7 @@ export default async function SitemapPage() {
             </h2>
           </div>
           <p className="text-xs text-muted font-semibold">
-            Included in <span className="font-mono text-heading">sitemap.xml</span> with weekly change frequency
+            Complete directory with regular catalog updates
           </p>
         </div>
 

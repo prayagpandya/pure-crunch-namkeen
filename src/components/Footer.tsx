@@ -80,15 +80,6 @@ export function Footer() {
               <li>
                 <Link href="/sitemap" className="hover:text-primary transition">Website Sitemap</Link>
               </li>
-              <li className="pt-1 flex items-center gap-3">
-                <Link href="/sitemap.xml" className="text-gray-500 hover:text-cyan-400 text-[11px] transition font-mono">
-                  XML Sitemap
-                </Link>
-                <span className="text-gray-600">•</span>
-                <Link href="/admin" className="text-gray-500 hover:text-secondary text-[11px] transition inline-flex items-center gap-1 font-medium">
-                  <span>🔒 Admin Portal</span>
-                </Link>
-              </li>
             </ul>
           </div>
 
